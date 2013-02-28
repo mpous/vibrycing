@@ -9,35 +9,13 @@ function renderRoute(route) {
 	var duration = route.routes[0].legs[0].duration;
 	var steps = route.routes[0].legs[0].steps;
 	
-	var near = false;
-
-	/*
- 	* {
- 	"distance" : {
- 	"text" : "0,2 km",
- 	"value" : 232
- 	},
- 	"duration" : {
- 	"text" : "3 minuts",
- 	"value" : 169
- 	},
- 	"end_location" : {
- 	"lat" : 41.358090,
- 	"lng" : 2.133660
- 	},
- 	"html_instructions" : "Gireu a la \u003cb\u003edreta\u003c/b\u003e per \u003cb\u003eCarrer l'Alumini\u003c/b\u003e",
- 	"polyline" : {
- 	"points" : "ukl{F{~_LkHfF_Af@"
- 	},
- 	"start_location" : {
- 	"lat" : 41.356270,
- 	"lng" : 2.135020
- 	},
- 	"travel_mode" : "WALKING"
- 	}
- 	*/
+	var continue_loop = true;
+	var index = 0;
+	
  	
  	function isNear(actual_step){
+ 		
+ 		var near = false;
  		
  			function errorGPS(msg){
 				alert("GPS ERROR!! w00t!");
@@ -78,14 +56,16 @@ function renderRoute(route) {
 				
 						if (direction.indexOf("dreta") >= 0 || direction.indexOf("right") >= 0){
 							alert("dreta");
+							vibrateRight();
 						}
 						else if (direction.indexOf("esquerra") >= 0 || direction.indexOf("left") >= 0){
 							alert("esquerra");
+							vibrateLeft();
 						}else{
-							alert("random!")
+							alert("random!");
 						}
 					
-					near = true;
+					continue_loop = true;
 					
 					return true
 				}else{
@@ -99,7 +79,6 @@ function renderRoute(route) {
 				},5000);
 			
 
-
 	}	
 
 	for (var i=0;i<steps.length;i++) {
@@ -107,15 +86,12 @@ function renderRoute(route) {
 		var lon_now;
 
 		actual_step = steps[i];
+		
+		isNear(actual_step);
 
-		do{
-			near = false;
-			isNear(actual_step);
-			
-		} while (near);
 		
 		if(i==steps.length){
-			alert("The END!")
+			alert("The END!");
 		}
 
 	}
