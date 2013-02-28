@@ -8,6 +8,8 @@ function renderRoute(route) {
 	var distance = route.routes[0].legs[0].distance;
 	var duration = route.routes[0].legs[0].duration;
 	var steps = route.routes[0].legs[0].steps;
+	
+	var near = false;
 
 	/*
  	* {
@@ -83,6 +85,8 @@ function renderRoute(route) {
 							alert("random!")
 						}
 					
+					near = true;
+					
 					return true
 				}else{
 					return false
@@ -103,11 +107,10 @@ function renderRoute(route) {
 		var lon_now;
 
 		actual_step = steps[i];
-		var near = false;
 
 		do{
-			
-			near = isNear(actual_step);
+			near = false;
+			isNear(actual_step);
 			
 		} while (near);
 		
