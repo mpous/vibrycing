@@ -43,7 +43,6 @@
 				
 				<article>
 					<form id="form-lat-lng" action="#">
-						
 						<input type="text" name="lat_origin" id="lat_origin" />
 						<input type="text" name="lon_origin" id="lon_origin" /> 
 						<input type="text" name="lat_dest" id="lat_dest" />
@@ -62,8 +61,6 @@
 		<p style="text-align:center; font-size:8pt;">
 			Idea from <a href="http://marc.planaguma.net">Marc Planagumà</a> and <a href="http://marcpous.com">Marc Pous</a>
 		</p>
-
-
 
 				<!-- Origin Destination Map code -->
 				
@@ -199,6 +196,8 @@
 						var lat_dest = $('#lat_dest').val();
 						var lon_dest = $('#lon_dest').val();
 
+						//startVibrate(100);
+
 						/*
 							
 							* busquem el JSON amb la driving/walking route que ens torna Google
@@ -240,11 +239,42 @@
 
 				<!-- Vibration scripts -->
 
-				<script>
+				<script type="text/javascript">
+		
+					if (!navigator.vibrate)
+					{
+						alert("Does your browser accept navigator.vibrate ? " + (navigator.vibrate ? "Yes" : "No"));
+					}
+					//alert("navigator.webkitVibrate?  " + (navigator.webkitVibrate ? "Yes" : "No"));
+					//alert("navigator.oVibrate?  " + (navigator.oVibrate ? "Yes" : "No"));
 					
-					function vibrateLeft(){}
+					function startVibrate(level) {
+						navigator.vibrate(level);
+					}
 
-					function vibrateRight(){}
+					var vibrateInterval;
+					function startPeristentVibrate(level, interval) {
+						vibrateInterval = setInterval(function() {
+							startVibrate(level);
+						}, interval);
+					}
+					
+					function stopVibrate() {
+						if(vibrateInterval) clearInterval(vibrateInterval);
+						navigator.vibrate(0);
+					}
+
+
+					
+					function vibrateLeft()
+					{
+						startVibrate([1500, 100, 1000]);
+					}
+
+					function vibrateRight()
+					{
+						startVibrate([100, 100, 300, 0, 300, 0, 300, 0, 300, 0, 300]);
+					}
 
 				</script>
 
