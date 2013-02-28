@@ -275,3 +275,13 @@ pre { font-size: 14px; }
 .atn { color: #606; }
 .atv { color: #080; }
 .dec { color: #606; }
+
+
+
+.button_go
+{
+  width: 90%;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+}

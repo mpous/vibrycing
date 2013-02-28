@@ -26,7 +26,7 @@
 
 				<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 				<article>
-					<form action="#" method="POST">
+					<form action="#">
 						
 						<input type="text" name="lat_origin" id="lat_origin" />
 						<input type="text" name="lon_origin" id="lon_origin" /> 
@@ -36,7 +36,11 @@
 						<span id="status"> searching...</span>
 						<br />
 
-						<input type="submit" value="Go" onClick="calculateRoute()" />
+						<input type="button" class="button_go" value="Go" onClick="calculateRoute()" />
+						<br />
+						<input type="button" class="button_go" value="Left" onClick="vibrateLeft()" />
+						<br />
+						<input type="button" class="button_go" value="Right" onClick="vibrateRight()" />
 					</form>
 				</article>
 
@@ -46,8 +50,6 @@
 		<p style="text-align:center; font-size:8pt;">
 			Idea from <a href="http://marc.planaguma.net">Marc Planagumà</a> and <a href="http://marcpous.com">Marc Pous</a>
 		</p>
-
-
 
 				<!-- Origin Destination Map code -->
 				
@@ -177,11 +179,15 @@
 				<script>
 					function calculateRoute()
 					{
+						alert("HOLA");
 						var lat_origin = document.querySelector('#lat_origin');
 						var lon_origin = document.querySelector('#lon_origin');
 
 						var lat_dest = document.querySelector('#lat_dest');
 						var lon_dest = document.querySelector('#lon_dest');
+
+
+						//startVibrate(100);
 
 						/*
 							
@@ -201,11 +207,42 @@
 
 				<!-- Vibration scripts -->
 
-				<script>
+				<script type="text/javascript">
+		
+					if (!navigator.vibrate)
+					{
+						alert("Does your browser accept navigator.vibrate ? " + (navigator.vibrate ? "Yes" : "No"));
+					}
+					//alert("navigator.webkitVibrate?  " + (navigator.webkitVibrate ? "Yes" : "No"));
+					//alert("navigator.oVibrate?  " + (navigator.oVibrate ? "Yes" : "No"));
 					
-					function vibrateLeft(){}
+					function startVibrate(level) {
+						navigator.vibrate(level);
+					}
 
-					function vibrateRight(){}
+					var vibrateInterval;
+					function startPeristentVibrate(level, interval) {
+						vibrateInterval = setInterval(function() {
+							startVibrate(level);
+						}, interval);
+					}
+					
+					function stopVibrate() {
+						if(vibrateInterval) clearInterval(vibrateInterval);
+						navigator.vibrate(0);
+					}
+
+
+					
+					function vibrateLeft()
+					{
+						startVibrate([1500, 100, 1000]);
+					}
+
+					function vibrateRight()
+					{
+						startVibrate([100, 100, 300, 0, 300, 0, 300, 0, 300, 0, 300]);
+					}
 
 				</script>
 
