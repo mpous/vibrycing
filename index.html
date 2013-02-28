@@ -26,7 +26,7 @@
 
 				<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 				<article>
-					<form action="insertBarcode.php" method="POST">
+					<form action="#" method="POST">
 						
 						<input type="text" name="lat_origin" id="lat_origin" />
 						<input type="text" name="lon_origin" id="lon_origin" /> 
@@ -36,10 +36,21 @@
 						<span id="status"> searching...</span>
 						<br />
 
-						<input type="submit" value="Go" />
+						<input type="submit" value="Go" onClick="calculateRoute()" />
 					</form>
 				</article>
-					
+
+		</section>
+		<script src="js/prettify.min.js"></script>
+
+		<p style="text-align:center; font-size:8pt;">
+			Idea from <a href="http://marc.planaguma.net">Marc Planagumà</a> and <a href="http://marcpous.com">Marc Pous</a>
+		</p>
+
+
+
+				<!-- Origin Destination Map code -->
+				
 				<script>
 					var s = document.querySelector('#status');
 					
@@ -158,15 +169,47 @@
 						error('Geolocation not supported');
 					}
 				</script>
-		</section>
-		<script src="js/prettify.min.js"></script>
 
-		<p style="text-align:center; font-size:8pt;">
-			Idea from <a href="http://marc.planaguma.net">Marc Planagumà</a> and <a href="http://marcpous.com">Marc Pous</a>
-		</p>
+				<!-- / First Map code -->
+
+				<!-- Route calculation -->
+
+				<script>
+					function calculateRoute()
+					{
+						var lat_origin = document.querySelector('#lat_origin');
+						var lon_origin = document.querySelector('#lon_origin');
+
+						var lat_dest = document.querySelector('#lat_dest');
+						var lon_dest = document.querySelector('#lon_dest');
+
+						/*
+							
+							* busquem el JSON amb la driving/walking route que ens torna Google
+							* convertim el JSON en un objecte ruta amb steps
+							* agafem el 1er step i el comparem amb la latitud i longituds actuals
+							* si estem arribant al nextStep --> vibrar dreta o esquerra
+							* seguim amb el bucle fins al final
 
 
+						*/
 
+					}
+				</script>
+
+				<!-- / Route calculation -->
+
+				<!-- Vibration scripts -->
+
+				<script>
+					
+					function vibrateLeft(){}
+
+					function vibrateRight(){}
+
+				</script>
+
+				<!-- / Vibration scripts -->
 
 	</body>
 </html>
