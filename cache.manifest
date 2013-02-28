@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# 2012-09-01:v1
+
+# Explicitly cached 'master entries'.
+CACHE:
+favicon.ico
+index.html
+css/geo.css
+js/geo.js
+js/prettify.min.js
+img/codibarres.png
+
+# Resources that require the user to be online.
+NETWORK:
+insertBarcode.php
+http://maps.google.com/maps/api/js?sensor=false
