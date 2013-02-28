@@ -4,10 +4,10 @@
 
 function renderRoute(route) {
 
-	var min_dist = 0,05; // 50m
-	var distance = route.legs.distance;
-	var duration = route.legs.duration;
-	var steps = route.legs.steps;
+	var min_dist = 0.05; // 50m
+	var distance = route.routes.legs.distance;
+	var duration = route.routes.legs.duration;
+	var steps = route.routes.legs.steps;
 
 	/*
  	* {
