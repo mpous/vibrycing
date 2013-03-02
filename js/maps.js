@@ -35,7 +35,7 @@ $(document).ready( function() { // When body is ready!
 
 		var mapcanvas = document.createElement('div');
 		mapcanvas.id = 'mapcanvas';
-		mapcanvas.style.height = '400px';
+		mapcanvas.style.height = '300px';
 		mapcanvas.style.width = '100%';
 
 		document.querySelector('article').appendChild(mapcanvas);
@@ -86,6 +86,7 @@ $(document).ready( function() { // When body is ready!
 
 		marker = new google.maps.Marker({
 			position: location,
+			icon: 'img/bike.png',
 			map: map
 		});
 
