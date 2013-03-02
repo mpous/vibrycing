@@ -64,30 +64,30 @@ function renderRoute(route) {
 				var direction = actual_step.html_instructions;
 	
 				if (direction.indexOf("dreta") >= 0 || direction.indexOf("right") >= 0) {
-					alert("Dreta [Step "+index+"] ->");
+					//alert("Dreta [Step "+index+"] ->");
 					console.log("Dreta [Step "+index+"] ->");
 					vibrateRight();
 					
 				} else if (direction.indexOf("esquerra") >= 0 || direction.indexOf("left") >= 0) {
-					alert("<- Esquerra [Step "+index+"]");
+					//alert("<- Esquerra [Step "+index+"]");
 					console.log("<- Esquerra [Step "+index+"]");
 					vibrateLeft();
 					
 				} else {
 					//we cant get if we should go left or right
-					alert("<- Random ->  [Step "+index+"]");
+					//alert("<- Random ->  [Step "+index+"]");
 					console.log("<- Random ->  [Step "+index+"]");
 
 					var rndnum = Math.floor(Math.random()*2);
 					if (rndnum == 0){
 						console.log("<- Random Left->  [Step "+index+"]");
-						alert("<- Random Left ->  [Step "+index+"]");
+						//alert("<- Random Left ->  [Step "+index+"]");
 
 						vibrateLeft();
 					}
 					else{
 						console.log("<- Random Right ->  [Step "+index+"]");
-						alert("<- Random Right ->  [Step "+index+"]");
+						//alert("<- Random Right ->  [Step "+index+"]");
 
 						vibrateRight();
 					}
@@ -104,7 +104,7 @@ function renderRoute(route) {
 			}
 		
 		}else{
-			alert("The End!");
+			//alert("The End!");
 			console.log("The End!");
 
 			vibrateEnd();
