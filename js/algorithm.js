@@ -2,15 +2,21 @@
  * WIPJam FirefoxOS Hackathon
  * @author Marc Planagumà
  * @author Marc Pous
+ * 
+ * Route calculation
  */
 
 function renderRoute(route) {
 
 	var min_dist = 0.05; // 50m
+	var gps_period = 5000; // 5 seg
+	
+	// Route Object 
 	var distance = route.routes[0].legs[0].distance;
 	var duration = route.routes[0].legs[0].duration;
 	var steps = route.routes[0].legs[0].steps;
 
+	// Iterator
 	var index = 0;
 	var actual_step = steps[index];
 	console.log("Steps: " + steps.length);
@@ -29,8 +35,8 @@ function renderRoute(route) {
 		//lat_end = actual_step.end_location.lat;
 		//lon_end = actual_step.end_location.lng;
 
-		lat_end = lat_now;
-		lon_end = lon_now;
+		lat_end = lat_now; // Mock
+		lon_end = lon_now; // Mock
 		
 		if(index < steps.length){  // is last step ?
 
@@ -91,6 +97,6 @@ function renderRoute(route) {
 
 	var refreshIntervalId = setInterval( function() {
 		navigator.geolocation.getCurrentPosition(successGPS, errorGPS);
-	},5000);
+	},gps_period);
 	
 }
