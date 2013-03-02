@@ -215,23 +215,30 @@
 						
 						$.ajax({
 							url: google_maps_api_url + "directions/json",
-							data: {	origin: lat_origin + "," + lon_origin , 
-									destination: lat_dest + "," + lon_dest , 
+							data: {	
 									sensor: "false",
-									mode: "walking"},
-							success: function(data) {
+									origin: lat_origin + "," + lon_origin , 
+									destination: lat_dest + "," + lon_dest , 
+									mode: "walking"
+								  },
+							success: function(data, textStatus) {
+								
+								// Fix on Firefox! "data" response is not a Object is a string
+								if (!($.isPlainObject(data))){
+									data = $.parseJSON(data);
+								}
 								
 								if(data.status == "OK"){
 									renderRoute(data);
 
 								}else{
-									alert(data.status);
+									alert("NO Route available: " + data.status);
 								}
 								
 					
 							},
 							error: function(data) {
-								alert(data);
+								alert("Google Maps Route Error: " + data);
 							}
 						}).done( function() {
 						});
