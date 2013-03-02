@@ -74,8 +74,24 @@ function renderRoute(route) {
 					vibrateLeft();
 					
 				} else {
+					//we cant get if we should go left or right
 					alert("<- Random ->  [Step "+index+"]");
 					console.log("<- Random ->  [Step "+index+"]");
+
+					var rndnum = Math.floor(Math.random()*2);
+					if (rndnum == 0){
+						console.log("<- Random Left->  [Step "+index+"]");
+						alert("<- Random Left ->  [Step "+index+"]");
+
+						vibrateLeft();
+					}
+					else{
+						console.log("<- Random Right ->  [Step "+index+"]");
+						alert("<- Random Right ->  [Step "+index+"]");
+
+						vibrateRight();
+					}
+
 				}
 	
 				index++;
@@ -90,6 +106,9 @@ function renderRoute(route) {
 		}else{
 			alert("The End!");
 			console.log("The End!");
+
+			vibrateEnd();
+
 			clearInterval(refreshIntervalId);
 		}
 

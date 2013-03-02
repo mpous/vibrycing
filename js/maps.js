@@ -36,7 +36,7 @@ $(document).ready( function() { // When body is ready!
 		var mapcanvas = document.createElement('div');
 		mapcanvas.id = 'mapcanvas';
 		mapcanvas.style.height = '400px';
-		mapcanvas.style.width = '90%';
+		mapcanvas.style.width = '100%';
 
 		document.querySelector('article').appendChild(mapcanvas);
 
