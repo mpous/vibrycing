@@ -37,6 +37,9 @@ function calculateRoute() {
 			mode: "walking"
 		},
 		success: function(data, textStatus) {
+			
+			// Draw Route in the map!
+			calcRoute();
 
 			// Fix on Firefox! "data" response is not a Object is a string
 			if (!($.isPlainObject(data))) {

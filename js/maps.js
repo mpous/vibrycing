@@ -2,10 +2,12 @@
  * WIPJam FirefoxOS Hackathon
  * @author Marc Planagumà
  * @author Marc Pous
- * 
+ *
  * Origin Destination Map code
  */
 
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
 var map;
 
 var markersArray = [];
@@ -56,6 +58,8 @@ function success(position) {
 	};
 
 	map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+	directionsDisplay = new google.maps.DirectionsRenderer();
+	directionsDisplay.setMap(map);
 
 	var marker = new google.maps.Marker({
 		position: latlng_origin,
@@ -74,6 +78,29 @@ function success(position) {
 
 	google.maps.event.addListener(map, 'click', function(event) {
 		addMarker(event.latLng);
+	});
+}
+
+function calcRoute() {
+
+	var lat_origin = document.querySelector('#lat_origin');
+	var lon_origin = document.querySelector('#lon_origin');
+
+	var lat_dest = document.querySelector('#lat_dest');
+	var lon_dest = document.querySelector('#lon_dest');
+
+	var latlng_origin = new google.maps.LatLng(lat_origin.value, lon_origin.value);
+	var latlng_dest = new google.maps.LatLng(lat_dest.value, lon_dest.value);
+
+	var request = {
+		origin:latlng_origin,
+		destination:latlng_dest,
+		travelMode: google.maps.TravelMode.WALKING
+	};
+	directionsService.route(request, function(result, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+			directionsDisplay.setDirections(result);
+		}
 	});
 }
 
