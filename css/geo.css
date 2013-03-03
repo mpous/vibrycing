@@ -48,8 +48,8 @@ h1.title_center{
   margin: 0;
   padding: 0;
   width: 100%;
-  background: url('../img/header_bg_orange.png');
-  color:#FFFFFF;
+  #background: url('../img/header_bg_orange.png');
+  #color:#FFFFFF;
 }
 
 footer > * {
@@ -60,7 +60,7 @@ footer > * {
 p.title{
   text-align:center;
   font-size: 10pt;
-  width: 90%;
+  width: 100%;
 }
 
 #status {
