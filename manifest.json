@@ -1,9 +1,20 @@
+/*
+https://developer.mozilla.org/en-US/docs/Apps/Manifest
+*/
 {
   "name": "Vibrycing",
   "description": "Vibrycing is the HTML5 app winner at the MWC 2013 WIP Jam for FirefoxOS! Select your destination, click Go, put your device in your pocket and leave the vibration guide you!",
-  "launch_path": "/",
+  "launch_path": "http://marcpous.com/vibrycing/",
   "icons": {
     "128": "/img/bike.png"
+  },
+  "permissions": {
+   "geolocation": {
+     "description": "Required geolocation to obtain the current location and guide you during your route."
+     },
+   "backgroundservice": {
+     "description": " Enable a web application to run in the background and perform tasks like syncing or responding to incoming messages."
+     }
   },
   "developer": {
     "name": "Marc Planagumà",
