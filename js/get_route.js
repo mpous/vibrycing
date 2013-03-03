@@ -1,5 +1,7 @@
 /**
- * @author Mobilitat BDigital
+ * WIPJam FirefoxOS Hackathon
+ * @author Marc Planagumà
+ * @author Marc Pous
  * 
  * Route calculation with Google maps
  */
