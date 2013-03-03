@@ -32,11 +32,12 @@ function renderRoute(route) {
 		lat_now = position.coords.latitude;
 		lon_now = position.coords.longitude;
 
-		//lat_end = actual_step.end_location.lat;
-		//lon_end = actual_step.end_location.lng;
+		lat_end = actual_step.end_location.lat;
+		lon_end = actual_step.end_location.lng;
 
-		lat_end = lat_now; // Mock
-		lon_end = lon_now; // Mock
+		// Mock to test
+		//lat_end = lat_now; // Mock
+		//lon_end = lon_now; // Mock
 
 		// ToDo: show at the map the real-time position of the user
 		//var current_position = new google.maps.LatLng(lat_end, lon_end);

@@ -1,5 +1,6 @@
 /**
 *
+* https://developer.mozilla.org/en-US/docs/DOM/window.navigator.vibrate
 */
 
 /*
@@ -41,11 +42,11 @@ function stopVibrate() {
 }
 
 function vibrateLeft() {
-	startVibrate([1500, 200, 200, 200, 1000]);
+	startVibrate([1500, 200, 200, 200]);
 }
 
 function vibrateRight() {
-	startVibrate([100, 200, 300, 400, 500, 600, 700]);
+	startVibrate([100, 200, 300, 400, 500, 600]);
 }
 
 function vibrateEnd(){
