@@ -42,13 +42,16 @@ function stopVibrate() {
 }
 
 function vibrateLeft() {
+	stopVibrate();
 	startVibrate([1500, 200, 200, 200]);
 }
 
 function vibrateRight() {
+	stopVibrate();
 	startVibrate([100, 200, 300, 400, 500, 600]);
 }
 
 function vibrateEnd(){
+	stopVibrate();
 	startVibrate([500, 500, 400, 300, 200, 100, 500, 500]);
 }

@@ -1,0 +1,15 @@
+{
+  "name": "Vibrycing",
+  "description": "Vibrycing is the HTML5 app winner at the MWC 2013 WIP Jam for FirefoxOS! Select your destination, click Go, put your device in your pocket and leave the vibration guide you!",
+  "launch_path": "/",
+  "icons": {
+    "128": "/img/bike.png"
+  },
+  "developer": {
+    "name": "Marc Planagumà",
+    "url": "http://marc.planaguma.net",
+    "name": "Marc Pous",
+    "url": "http://marcpous.com"
+  },
+  "default_locale": "en"
+}
