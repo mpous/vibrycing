@@ -37,6 +37,10 @@ function renderRoute(route) {
 
 		lat_end = lat_now; // Mock
 		lon_end = lon_now; // Mock
+
+		// ToDo: show at the map the real-time position of the user
+		//var current_position = new google.maps.LatLng(lat_end, lon_end);
+		//addCurrentPositionMarker(current_position);
 		
 		if(index < steps.length){  // is last step ?
 
@@ -108,15 +112,13 @@ function renderRoute(route) {
 							vibrateRight();
 						}
 					}
-					
 
 				}
 	
 				index++;
 				actual_step = steps[index];
 				console.log('Step completed! Next step: ' + index);
-				
-				
+
 			} else {
 				console.log('The step '+index+' is far away yet!');
 			}

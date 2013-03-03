@@ -1,3 +1,20 @@
+/**
+*
+*/
+
+/*
+navigator.vibrate = ( function () {
+  return  navigator.vibrate       || 
+          navigator.mozVibrate    || 
+          navigator.webkitVibrate || 
+          navigator.oVibrate      || 
+          navigator.msVibrate     || 
+          function(params) {
+            doVibrate(params);
+          };
+})();
+*/
+
 if (!navigator.vibrate) {
 	//alert("Does your browser accept navigator.vibrate ? " + (navigator.vibrate ? "Yes" : "No"));
 	alert("The browser does not use the vibration API.");
@@ -24,15 +41,13 @@ function stopVibrate() {
 }
 
 function vibrateLeft() {
-	startVibrate([1500, 1, 1, 1, 1, 100, 1, 1, 1, 1, 1000]);
-	//startPeristentVibrate(100, 3);
+	startVibrate([1500, 200, 200, 200, 1000]);
 }
 
 function vibrateRight() {
-	startVibrate([100, 1, 1, 1, 80, 1, 1, 1, 1, 300, 1, 1, 1, 1, 1, 300]);
-	//startPeristentVibrate(200, 4);
+	startVibrate([100, 200, 300, 400, 500, 600, 700]);
 }
 
 function vibrateEnd(){
-	startVibrate([10, 1, 1, 10, 1, 1, 1, 1, 10, 1, 1, 1, 1, 10]);
+	startVibrate([500, 500, 400, 300, 200, 100, 500, 500]);
 }

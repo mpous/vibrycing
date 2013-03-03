@@ -18,6 +18,7 @@ $(document).ready( function() { // When body is ready!
 	var map;
 
 	var markersArray = [];
+	var currentPosition = [];
 
 	function success(position) {
 		if (s.className == 'success') {
@@ -99,6 +100,30 @@ $(document).ready( function() { // When body is ready!
 		markersArray.push(marker);
 	}
 
+
+	function addCurrentPositionMarker(location) {
+
+		var coords = String(location).split(',');
+
+		var lat = coords[0].trim();
+		lat = String(lat).slice(1);
+		var lon = coords[1].trim();
+		lon = String(lon).slice(0, -1);
+
+		deleteCurrentPositionOverlays();
+
+		marker = new google.maps.Marker({
+			position: location,
+			icon: 'img/bicycle.png',
+			map: map
+		});
+
+		lat_dest.value = lat;
+		lon_dest.value = lon;
+
+		currentPosition.push(marker);
+	}
+
 	// Deletes all markers in the array by removing references to them
 	function deleteOverlays() {
 		if (markersArray) {
@@ -106,6 +131,15 @@ $(document).ready( function() { // When body is ready!
 				markersArray[i].setMap(null);
 			}
 			markersArray.length = 0;
+		}
+	}
+
+	function deleteCurrentPositionOverlays() {
+		if (currentPosition) {
+			for (i in currentPosition) {
+				currentPosition[i].setMap(null);
+			}
+			currentPosition.length = 0;
 		}
 	}
 
