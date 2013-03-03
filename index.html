@@ -14,7 +14,8 @@
 		
 		<title>Vibrycing | WIP Jam MWC Barcelona 2013</title>
 
-		<link rel="stylesheet" href="css/geo.css" type="text/css" />
+		<link type="text/css" rel="stylesheet" href="css/geo.css" />
+		<link type="text/css" rel="stylesheet" href="css/button.css" />
 
 
 		<script type="text/javascript" src="js/jquery-1.8.3/jquery-1.8.3.min.js"></script>
@@ -58,23 +59,40 @@
 						<input type="hidden" name="lon_dest" id="lon_dest" /> 
 
 						<input type="submit" class="button_go" value="Go"/>
+						<!--<button>Go!</button>-->
 					</form>
 
 				</article>
 
 				<p style="width:100%; text-align:center;">
-					<input type="button" value="Try Left" onClick="vibrateLeft()" />
-					<input type="button" value="Try Right" onClick="vibrateRight()" />
+					<button onClick="vibrateLeft()">Try Left</button>
+					<button onClick="vibrateRight()">Try Right</button>
 				</p>
 
 		</section>
-		<script src="js/prettify.min.js"></script>
+		<!--<script src="js/prettify.min.js"></script>-->
 
 		<p style="text-align:center; font-size:8pt;">
 			<strong>Vibrycing is the HTML5 app winner at the MWC 2013 WIP Jam for FirefoxOS!</strong>
 			<br />
-			Idea from <a href="http://marc.planaguma.net" title="Marc Planagumà website" target="_blank">Marc Planagumà</a> (<a href="http://twitter.com/djkram" target="_blank">@djkram</a>) and <a href="http://marcpous.com" title="Marc Pous website" target="_blank">Marc Pous</a> (<a href="http://twitter.com/gy4nt" target="_blank">@gy4nt</a>)
+			Developed by <a href="http://marc.planaguma.net" title="Marc Planagumà website" target="_blank">Marc Planagumà</a> (<a href="http://twitter.com/djkram" target="_blank">@djkram</a>) and <a href="http://marcpous.com" title="Marc Pous website" target="_blank">Marc Pous</a> (<a href="http://twitter.com/gy4nt" target="_blank">@gy4nt</a>)
 		</p>
+
+<!-- Google Analytics -->
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-38978505-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+<!-- / Google Analytics -->
 
 	</body>
 </html>

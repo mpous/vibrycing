@@ -24,13 +24,15 @@ function stopVibrate() {
 }
 
 function vibrateLeft() {
-	startVibrate([1500, 100, 1000]);
+	startVibrate([1500, 1, 1, 1, 1, 100, 1, 1, 1, 1, 1000]);
+	//startPeristentVibrate(100, 3);
 }
 
 function vibrateRight() {
-	startVibrate([100, 0, 0, 0, 100, 300, 0, 300, 0, 300, 0, 300, 0, 300]);
+	startVibrate([100, 1, 1, 1, 80, 1, 1, 1, 1, 300, 1, 1, 1, 1, 1, 300]);
+	//startPeristentVibrate(200, 4);
 }
 
 function vibrateEnd(){
-	startVibrate([10, 0, 0, 10, 10, 10]);
+	startVibrate([10, 1, 1, 10, 1, 1, 1, 1, 10, 1, 1, 1, 1, 10]);
 }

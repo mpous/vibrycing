@@ -27,6 +27,9 @@ $(document).ready( function() { // When body is ready!
 		s.innerHTML = "found!";
 		s.className = 'success';
 
+		var d = document.getElementById( 'status' );
+		d.parentNode.removeChild( d ); 
+
 		lat_origin.value =   position.coords.latitude;
 		lon_origin.value =   position.coords.longitude;
 

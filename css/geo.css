@@ -44,6 +44,12 @@ footer > * {
 
 h1.title_center{
   text-align: center;
+  font-size: 14pt;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: url('../img/header_bg_orange.png');
+  color:#FFFFFF;
 }
 
 footer > * {
@@ -53,7 +59,8 @@ footer > * {
 
 p.title{
   text-align:center;
-
+  font-size: 10pt;
+  width: 90%;
 }
 
 #status {

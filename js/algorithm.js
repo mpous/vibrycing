@@ -63,34 +63,52 @@ function renderRoute(route) {
 	
 				var direction = actual_step.html_instructions;
 	
-				if (direction.indexOf("dreta") >= 0 || direction.indexOf("right") >= 0) {
+				if (direction.indexOf("dreta") >= 0 || direction.indexOf("derecha") >= 0 || direction.indexOf("right") >= 0) {
 					//alert("Dreta [Step "+index+"] ->");
-					console.log("Dreta [Step "+index+"] ->");
+					console.log("-> Dreta [Step "+index+"]");
 					vibrateRight();
 					
-				} else if (direction.indexOf("esquerra") >= 0 || direction.indexOf("left") >= 0) {
+				} else if (direction.indexOf("esquerra") >= 0 || direction.indexOf("izquierda") >= 0 || direction.indexOf("left") >= 0) {
 					//alert("<- Esquerra [Step "+index+"]");
 					console.log("<- Esquerra [Step "+index+"]");
 					vibrateLeft();
 					
+				} else if (direction.indexOf("endavant") >= 0 || direction.indexOf("Continúa") >= 0 || direction.indexOf("Continue") >= 0) {
+					//alert("<- Endavant [Step "+index+"]");
+					console.log("| Endavant [Step "+index+"]");
+
 				} else {
 					//we cant get if we should go left or right
 					//alert("<- Random ->  [Step "+index+"]");
-					console.log("<- Random ->  [Step "+index+"]");
+					console.log("<-> Random [Step "+index+"] == "+direction);
 
-					var rndnum = Math.floor(Math.random()*2);
-					if (rndnum == 0){
-						console.log("<- Random Left->  [Step "+index+"]");
-						//alert("<- Random Left ->  [Step "+index+"]");
-
+					if (direction.indexOf("oest") >= 0 || direction.indexOf("oeste") >= 0 || direction.indexOf("west") >= 0)
+					{
+						console.log("<<-> Random Oest [Step "+index+"]");
 						vibrateLeft();
 					}
-					else{
-						console.log("<- Random Right ->  [Step "+index+"]");
-						//alert("<- Random Right ->  [Step "+index+"]");
-
+					else if (direction.indexOf("est") >= 0 || direction.indexOf("este") >= 0 || direction.indexOf("east") >= 0)
+					{
+						console.log("<->> Random Est [Step "+index+"]");
 						vibrateRight();
 					}
+					else 
+					{
+						var rndnum = Math.floor(Math.random()*2);
+						if (rndnum == 0){
+							console.log("<<-> Random Left [Step "+index+"]");
+							//alert("<- Random Left ->  [Step "+index+"]");
+
+							vibrateLeft();
+						}
+						else{
+							console.log("<->> Random Right [Step "+index+"]");
+							//alert("<- Random Right ->  [Step "+index+"]");
+
+							vibrateRight();
+						}
+					}
+					
 
 				}
 	
