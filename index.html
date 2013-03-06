@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset=utf-8 />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<!-- http://www.wipconnector.com/wipjam/entry/wipjam_mwc_2013_hackathon -->
+		<title>Vibrycing | WIP Jam MWC Barcelona 2013</title>
 
 		<!-- Viewport is very important, since it affects results of media query matching. -->
-  		<meta name="viewport" content="width=device-width">
-  		<meta name="viewport" content="height=device-height">
-
+  		<meta name="viewport" content="initial-scale=1.0;maximum-scale=1.0;user-scalable=no;width=device-width">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-		
-		<title>Vibrycing | WIP Jam MWC Barcelona 2013</title>
-		<!-- http://www.wipconnector.com/wipjam/entry/wipjam_mwc_2013_hackathon -->
+<!--
+		<link rel="apple-touch-icon-precomposed" href="images/touch-icon-precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch-icon-72-precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch-icon-114-precomposed.png" />
+		<link rel="apple-touch-icon" href="images/touch-icon-precomposed.png">
+
+		<link rel="apple-touch-startup-image" href="images/startup.png">	
+		<link rel="apple-touch-startup-image" sizes="640x960" href="img/startup-640x960.png" />	
+-->
+
 
 		<link type="text/css" rel="stylesheet" href="css/geo.css" />
 		<link type="text/css" rel="stylesheet" href="css/button.css" />
+		<link type="text/css" rel="stylesheet" href="css/header.css" />
 
 
 		<script type="text/javascript" src="js/jquery-1.8.3/jquery-1.8.3.min.js"></script>
@@ -42,9 +51,16 @@
 	</head>
 	<body>
 		<section id="wrapper">
-			<header>
-				<h1 class="title_center">Vibrycing</h1>
-			</header>
+			<section role="region">
+			  <header>
+			    <menu type="toolbar">
+			      <!--<a href="#"><span class="icon icon-edit">edit</span></a>-->
+			      <!--<a href="#"><span class="icon icon-add">add</span></a>-->
+			    </menu>
+			    <h1>Vibrycing</h1>
+			  </header>
+			</section>
+
 			<!--<meta name="viewport" content="width=640" />-->
 				<p class="title">
 					Select your destination, click Go, put your device in your pocket and leave the vibration guide you!
@@ -64,10 +80,10 @@
 
 				</article>
 
-				<p style="width:100%; text-align:center;">
+				<!--<p style="width:100%; text-align:center;">
 					<button onClick="vibrateLeft()">Try Left</button>
 					<button onClick="vibrateRight()">Try Right</button>
-				</p>
+				</p>-->
 
 			<!-- footer -->
 			<p style="text-align:center; font-size:8pt;">

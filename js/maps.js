@@ -117,7 +117,7 @@ function addMarker(location) {
 
 	marker = new google.maps.Marker({
 		position: location,
-		icon: 'img/bike.png',
+		//icon: 'img/bike.png',
 		map: map
 	});
 
