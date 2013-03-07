@@ -40,8 +40,8 @@ function renderRoute(route) {
 		//lon_end = lon_now; // Mock
 
 		// ToDo: show at the map the real-time position of the user
-		//var current_position = new google.maps.LatLng(lat_end, lon_end);
-		//addCurrentPositionMarker(current_position);
+		var current_position = new google.maps.LatLng(lat_now, lon_now);
+		addCurrentPositionMarker(current_position);
 		
 		if(index < steps.length){  // is last step ?
 
@@ -69,22 +69,18 @@ function renderRoute(route) {
 				var direction = actual_step.html_instructions;
 	
 				if (direction.indexOf("dreta") >= 0 || direction.indexOf("derecha") >= 0 || direction.indexOf("right") >= 0) {
-					//alert("Dreta [Step "+index+"] ->");
 					console.log("-> Dreta [Step "+index+"]");
 					vibrateRight();
 					
 				} else if (direction.indexOf("esquerra") >= 0 || direction.indexOf("izquierda") >= 0 || direction.indexOf("left") >= 0) {
-					//alert("<- Esquerra [Step "+index+"]");
 					console.log("<- Esquerra [Step "+index+"]");
 					vibrateLeft();
 					
 				} else if (direction.indexOf("endavant") >= 0 || direction.indexOf("Continúa") >= 0 || direction.indexOf("Continue") >= 0) {
-					//alert("<- Endavant [Step "+index+"]");
 					console.log("| Endavant [Step "+index+"]");
 
 				} else {
 					//we cant get if we should go left or right
-					//alert("<- Random ->  [Step "+index+"]");
 					console.log("<-> Random [Step "+index+"] == "+direction);
 
 					if (direction.indexOf("oest") >= 0 || direction.indexOf("oeste") >= 0 || direction.indexOf("west") >= 0)
@@ -102,14 +98,10 @@ function renderRoute(route) {
 						var rndnum = Math.floor(Math.random()*2);
 						if (rndnum == 0){
 							console.log("<<-> Random Left [Step "+index+"]");
-							//alert("<- Random Left ->  [Step "+index+"]");
-
 							vibrateLeft();
 						}
 						else{
 							console.log("<->> Random Right [Step "+index+"]");
-							//alert("<- Random Right ->  [Step "+index+"]");
-
 							vibrateRight();
 						}
 					}
@@ -125,7 +117,6 @@ function renderRoute(route) {
 			}
 		
 		}else{
-			//alert("The End!");
 			console.log("The End!");
 
 			vibrateEnd();

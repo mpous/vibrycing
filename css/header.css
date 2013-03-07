@@ -198,6 +198,10 @@ section[role="region"] > header:first-child .icon.icon-back {
   background-image: url(../img/headers/icons/back.png);
 }
 
+section[role="region"] > header:first-child .icon.icon-fwd {
+  background-image: url(../img/headers/icons/back-rtl.png);
+}
+
 section[role="region"] > header:first-child .icon.icon-menu {
   background-image: url(../img/headers/icons/menu.png);
 }

@@ -1,14 +1,11 @@
 {
     "version": "1",
     "name": "Vibrycing",
-    "launch_path": "http://marcpous.com/vibrycing/",
+    "launch_path": "/",
     "description": "Vibrycing is the HTML5 app winner at the MWC 2013 WIP Jam for FirefoxOS! Select your destination, click Go, put your device in your pocket and leave the vibration guide you!",
     "icons": {
-        "16": "/img/bike.png",
-        "32": "/img/bike.png",
-        "48": "/img/bike.png",
-        "64": "/img/bike.png",
-        "128": "/img/bike.png"
+        "48": "vibrycing/img/bike_48.png",
+        "128": "vibrycing/img/bike_128.png"
     },
     "developer": {
         "name": "Marc Planagumà",
@@ -19,9 +16,6 @@
     "installs_allowed_from": ["*"],
     "default_locale": "en",
     "permissions": {
-        "vibration": {
-            "description" : "To alert when turn left or right through vibration"
-        },
         "geolocation": {
             "description" : "Marking out user location"
         }

@@ -41,7 +41,7 @@ function success(position) {
 
 	var mapcanvas = document.createElement('div');
 	mapcanvas.id = 'mapcanvas';
-	mapcanvas.style.height = '300px';
+	mapcanvas.style.height = '280px';
 	mapcanvas.style.width = '100%';
 
 	document.querySelector('article').appendChild(mapcanvas);
@@ -135,6 +135,8 @@ function addCurrentPositionMarker(location) {
 	lat = String(lat).slice(1);
 	var lon = coords[1].trim();
 	lon = String(lon).slice(0, -1);
+
+	console.log("Move the current position to: "+lat+", "+lon);
 
 	deleteCurrentPositionOverlays();
 
