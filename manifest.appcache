@@ -1,0 +1,18 @@
+CACHE MANIFEST
+# Version 0.1
+
+index.html
+css/button.css
+css/geo.css
+css/header.css
+js/algorithm.js
+js/geo.js
+js/get_route.js
+js/maps.js
+js/vibrate.js
+
+NETWORK:
+*
+
+FALLBACK:
+/ 

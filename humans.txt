@@ -1,0 +1,43 @@
+/*
+      ._____.                       .__                
+___  _|__\_ |_________ ___.__. ____ |__| ____    ____  
+\  \/ /  || __ \_  __ <   |  |/ ___\|  |/    \  / ___\ 
+ \   /|  || \_\ \  | \/\___  \  \___|  |   |  \/ /_/  >
+  \_/ |__||___  /__|   / ____|\___  >__|___|  /\___  / 
+              \/       \/         \/        \//_____/  
+
+Vibrycing is the HTML5 app winner at the MWC 2013 WIP Jam for FirefoxOS!
+
+Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
+
+*/
+
+/* TEAM */
+
+Name: Marc Planagumà
+Site: http://marc.planaguma.net
+Twitter: djkram
+Location: Mataró, Catalonia, Europe
+                            
+Name: Marc Pous
+Site: http://marcpous.com
+Twitter: gy4nt
+Location: Barcelona, Catalonia, Europe
+
+							
+/* THANKS */
+							
+Name: Barcelona Digital Technology Center
+Site: http://bdigital.org
+
+                            
+/* SITE */
+
+Last update: 2013/03/07
+Language: <English>
+Standards: HTML5, CSS, JS
+Components: Google Maps and Vibration API
+Software: HTML5 and JS
+IDE: SublimeText 2
+
+Twitter: vibrycing
