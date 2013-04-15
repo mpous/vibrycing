@@ -87,8 +87,8 @@ function success(position)
 	});
 }
 
-function calcRoute() {
-
+function calcRoute() 
+{
 	var lat_origin = document.querySelector('#lat_origin');
 	var lon_origin = document.querySelector('#lon_origin');
 

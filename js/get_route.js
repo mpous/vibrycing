@@ -6,12 +6,19 @@
  * Route calculation with Google maps
  */
 
-function calculateRoute() {
+function calculateRoute() 
+{
 	var lat_origin = $('#lat_origin').val();
 	var lon_origin = $('#lon_origin').val();
 
 	var lat_dest = $('#lat_dest').val();
 	var lon_dest = $('#lon_dest').val();
+
+	var t = document.getElementById('title');
+	t.parentNode.removeChild( t );
+
+	var b = document.getElementById('button_go');
+	b.parentNode.removeChild( b );
 
 	//startVibrate(100);
 

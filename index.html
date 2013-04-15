@@ -44,7 +44,8 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
 
     <script type="text/javascript">
         $(document).ready(function() { // Load Events!
-			$("#form-lat-lng").submit(function() {
+			$("#form-lat-lng").submit(function() 
+			{
 				calculateRoute();
 				return false;
 			});
@@ -71,7 +72,7 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
 
     <div id="main">
 
-        <p class="title">
+        <p class="title" id="title">
             Tap on your destination, click Go and the vibration will guide you!
         </p>
 
@@ -82,7 +83,7 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
             <input type="hidden" name="lat_dest" id="lat_dest" />
             <input type="hidden" name="lon_dest" id="lon_dest" /> 
 
-            <input type="submit" class="button_go" value="Go"/>
+            <input type="submit" class="button_go" id="button_go" value="Go"/>
         </form>
 
 
