@@ -19,14 +19,10 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
     <meta name="viewport" content="width=device-width;user-scalable=no;">
 
     <!-- Icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <link rel="shortcut icon" href="img/bike.ico">
-    <link rel="apple-touch-icon-precomposed" href="img/bike_24.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/bike_128.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/bike_128.png" />
-    <link rel="apple-touch-icon" href="img/bike_512.png">
-    <link rel="apple-touch-startup-image" href="img/bike_512.png">  
+
+    <link rel="shortcut icon" href="Bike.ico">
+
+    <link rel="apple-touch-startup-image" href="img/Bike-Icon-60.png">  
     <!-- end Icons -->
 
     <link rel="stylesheet" type="text/css" href="css/base.css">
@@ -46,14 +42,12 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
 
     <title>Vibrycing</title>
 
-
     <script type="text/javascript">
         $(document).ready(function() { // Load Events!
-
-             $("#form-lat-lng").submit(function() {
-                calculateRoute();
-                return false;
-                });
+			$("#form-lat-lng").submit(function() {
+				calculateRoute();
+				return false;
+			});
         });
     </script>
 
@@ -63,8 +57,6 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
 
     <section role="region">
         <header>
-            <!-- Icon that will indicate whether you are online or offline - enabled if you are using offline/appcache (see above) -->
-            <div id="online-status" title="Online"></div>
             <menu type="toolbar">
                 <a href="#" onClick="vibrateLeft()"><span class="icon icon-back">Left</span></a>
                 <a href="#" onClick="vibrateRight()"><span class="icon icon-fwd">Right</span></a>
@@ -74,15 +66,13 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
             </h1>
         </header>
 
-
-
     </section>
 
 
     <div id="main">
 
         <p class="title">
-            Select your destination, click Go, put your device in your pocket and leave the vibration guide you!
+            Tap on your destination, click Go and the vibration will guide you!
         </p>
 
         <span id="status"> searching...</span>
@@ -95,6 +85,7 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
             <input type="submit" class="button_go" value="Go"/>
         </form>
 
+
     </div>
 
     <footer>
@@ -106,10 +97,22 @@ Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
     </footer>
 
     <script type="text/javascript" src="js/base.js"></script>
-<!--
-    <script type="text/javascript" src="js/webapp.js"></script>
-    <script type="text/javascript" src="js/offline.js"></script>
--->
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-38978505-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+	<!-- / Google Analytics -->
 
 
     <!-- 

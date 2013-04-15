@@ -13,8 +13,9 @@ var map;
 var markersArray = [];
 var currentPosition = [];
 
-function success(position) {
-
+function success(position) 
+{
+	console.log("Success....");
 	var s = document.querySelector('#status');
 
 	var lat_origin = document.querySelector('#lat_origin');
@@ -27,10 +28,11 @@ function success(position) {
 		// not sure why we're hitting this twice in FF, I think it's to do with a cached result coming back
 		return;
 	}
+	
 	s.innerHTML = "found!";
 	s.className = 'success';
 
-	var d = document.getElementById( 'status' );
+	var d = document.getElementById('status');
 	d.parentNode.removeChild( d );
 
 	lat_origin.value =   position.coords.latitude;
@@ -39,12 +41,15 @@ function success(position) {
 	lat_dest.value = position.coords.latitude;
 	lon_dest.value = position.coords.longitude;
 
+
 	var mapcanvas = document.createElement('div');
 	mapcanvas.id = 'mapcanvas';
 	mapcanvas.style.height = '100%';
 	mapcanvas.style.width = '100%';
 
 	document.querySelector('#main').appendChild(mapcanvas);
+
+	var mapcanvas = document.getElementById('mapcanvas');
 
 	var latlng_origin = new google.maps.LatLng(lat_origin.value, lon_origin.value);
 	var latlng_dest = new google.maps.LatLng(lat_dest.value, lon_dest.value);
@@ -58,6 +63,7 @@ function success(position) {
 	};
 
 	map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+
 	directionsDisplay = new google.maps.DirectionsRenderer();
 	directionsDisplay.setMap(map);
 
@@ -180,9 +186,16 @@ function error(msg) {
 
 $(document).ready( function() { // When body is ready!
 
-	if (navigator.geolocation) {
+	console.log("Dealing with Geolocation!");
+
+	if (navigator.geolocation) 
+	{
+		console.log("Geolocation is supported!");
 		navigator.geolocation.getCurrentPosition(success, error);
-	} else {
+	}
+	else
+	{
+		console.log("Geolocation not supported!");
 		error('Geolocation not supported');
 	}
 
