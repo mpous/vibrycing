@@ -1,0 +1,120 @@
+<!--
+      ._____.                       .__                
+___  _|__\_ |_________ ___.__. ____ |__| ____    ____  
+\  \/ /  || __ \_  __ <   |  |/ ___\|  |/    \  / ___\ 
+ \   /|  || \_\ \  | \/\___  \  \___|  |   |  \/ /_/  >
+  \_/ |__||___  /__|   / ____|\___  >__|___|  /\___  / 
+              \/       \/         \/        \//_____/  
+
+Vibrycing is the HTML5 app winner at the MWC 2013 WIP Jam for FirefoxOS!
+
+Idea and development by Marc Planagumà (@djkram) and Marc Pous (@gy4nt)
+
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<!-- http://www.wipconnector.com/wipjam/entry/wipjam_mwc_2013_hackathon -->
+		<title>Vibrycing</title>
+
+		<!-- Viewport is very important, since it affects results of media query matching. -->
+  		<meta name="viewport" content="initial-scale=1.0;maximum-scale=1.0;user-scalable=no;width=device-width">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+		<link rel="shortcut icon" href="img/bike.ico">
+
+		<link rel="apple-touch-icon-precomposed" href="img/bike_24.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/bike_128.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/bike_128.png" />
+		<link rel="apple-touch-icon" href="img/bike_512.png">
+
+		<link rel="apple-touch-startup-image" href="img/bike_512.png">	
+		<!--<link rel="apple-touch-startup-image" sizes="640x960" href="img/startup-640x960.png" />	-->
+
+		<link type="text/css" rel="stylesheet" href="css/geo.css" />
+		<link type="text/css" rel="stylesheet" href="css/button.css" />
+		<link type="text/css" rel="stylesheet" href="css/header.css" />
+
+		<script type="text/javascript" src="js/jquery-1.8.3/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="js/geo.js"></script>
+		<script type="text/javascript" src="js/maps.js"></script>
+		<script type="text/javascript" src="js/vibrate.js"></script>
+		<script type="text/javascript" src="js/algorithm.js"></script>
+		<script type="text/javascript" src="js/get_route.js"></script>
+
+
+		<script type="text/javascript">
+		
+		$(document).ready(function() { // Load Events!
+
+			 $("#form-lat-lng").submit(function() {
+				calculateRoute();
+				return false;
+				});
+		});
+
+		</script>
+
+	</head>
+	<body>
+		<section id="wrapper">
+			<section role="region">
+			  <header>
+			    <menu type="toolbar">
+			    	<a href="#" onClick="vibrateLeft()"><span class="icon icon-back">Left</span></a>
+			      	<a href="#" onClick="vibrateRight()"><span class="icon icon-fwd">Right</span></a>
+			    </menu>
+			    <h1>Vibrycing</h1>
+			  </header>
+			</section>
+
+			<p class="title">
+				Select your destination, click Go, put your device in your pocket and leave the vibration guide you!
+			</p>
+
+			<article>
+				<span id="status"> searching...</span>
+				<form id="form-lat-lng" action="#">
+					<input type="hidden" name="lat_origin" id="lat_origin" />
+					<input type="hidden" name="lon_origin" id="lon_origin" /> 
+					<input type="hidden" name="lat_dest" id="lat_dest" />
+					<input type="hidden" name="lon_dest" id="lon_dest" /> 
+
+					<input type="submit" class="button_go" value="Go"/>
+				</form>
+
+			</article>
+
+			<!-- footer -->
+			<!--<p style="text-align:center; font-size:8pt;">
+				<strong>Vibrycing is the HTML5 app winner at the MWC 2013 WIP Jam for FirefoxOS!</strong>
+				<br />
+				Developed by <a href="http://marc.planaguma.net" title="Marc Planagumà website" target="_blank">Marc Planagumà</a> (<a href="http://twitter.com/djkram" target="_blank">@djkram</a>) and <a href="http://marcpous.com" title="Marc Pous website" target="_blank">Marc Pous</a> (<a href="http://twitter.com/gy4nt" target="_blank">@gy4nt</a>)
+			</p>-->
+			<!-- / footer -->
+
+		</section>
+
+<!-- Google Analytics -->
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-38978505-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+<!-- / Google Analytics -->
+
+	</body>
+</html>

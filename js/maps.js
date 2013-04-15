@@ -41,10 +41,10 @@ function success(position) {
 
 	var mapcanvas = document.createElement('div');
 	mapcanvas.id = 'mapcanvas';
-	mapcanvas.style.height = '280px';
+	mapcanvas.style.height = '100%';
 	mapcanvas.style.width = '100%';
 
-	document.querySelector('article').appendChild(mapcanvas);
+	document.querySelector('#main').appendChild(mapcanvas);
 
 	var latlng_origin = new google.maps.LatLng(lat_origin.value, lon_origin.value);
 	var latlng_dest = new google.maps.LatLng(lat_dest.value, lon_dest.value);
