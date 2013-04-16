@@ -42,12 +42,16 @@ function success(position)
 	lon_dest.value = position.coords.longitude;
 
 
-	var mapcanvas = document.createElement('div');
-	mapcanvas.id = 'mapcanvas';
-	mapcanvas.style.height = '100%';
-	mapcanvas.style.width = '100%';
+	//var mapcanvas = document.createElement('div');
+	//mapcanvas.id = 'mapcanvas';
+	//mapcanvas.style.height = '100%';
+	//mapcanvas.style.width = '100%';
 
-	document.querySelector('#main').appendChild(mapcanvas);
+	var mapcanvas = $("<div id='mapcanvas'></div>")
+	mapcanvas.css("width", "100%");
+	mapcanvas.css("height", "100%");
+
+	$('#main').append(mapcanvas);
 
 	var mapcanvas = document.getElementById('mapcanvas');
 
