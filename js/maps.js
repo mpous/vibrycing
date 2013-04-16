@@ -68,7 +68,7 @@ function success(position)
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
-	map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+	map = new google.maps.Map(mapcanvas[0], myOptions);
 
 	directionsDisplay = new google.maps.DirectionsRenderer();
 	directionsDisplay.setMap(map);
