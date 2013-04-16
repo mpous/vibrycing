@@ -28,12 +28,13 @@ function renderRoute(route) {
 
 	function successGPS(position) {
 		
-		
 		lat_now = position.coords.latitude;
 		lon_now = position.coords.longitude;
 
 		lat_end = actual_step.end_location.lat;
 		lon_end = actual_step.end_location.lng;
+		
+		console.log("successGPS: " + "[" +lat_now+ ", " +lon_now+ ", " +lat_end+ ", " +lon_end+ "]");
 
 		// Mock to test
 		//lat_end = lat_now; // Mock

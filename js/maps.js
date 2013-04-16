@@ -35,8 +35,8 @@ function success(position)
 	var d = document.getElementById('status');
 	d.parentNode.removeChild( d );
 
-	lat_origin.value =   position.coords.latitude;
-	lon_origin.value =   position.coords.longitude;
+	lat_origin.value = position.coords.latitude;
+	lon_origin.value = position.coords.longitude;
 
 	lat_dest.value = position.coords.latitude;
 	lon_dest.value = position.coords.longitude;
