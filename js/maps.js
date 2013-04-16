@@ -46,14 +46,16 @@ function success(position)
 	//mapcanvas.id = 'mapcanvas';
 	//mapcanvas.style.height = '100%';
 	//mapcanvas.style.width = '100%';
+	
+	//document.querySelector('#main').appendChild(mapcanvas);
+	
+	//var mapcanvas = document.getElementById('mapcanvas');
 
 	var mapcanvas = $("<div id='mapcanvas'></div>")
 	mapcanvas.css("width", "100%");
 	mapcanvas.css("height", "100%");
 
 	$('#main').append(mapcanvas);
-
-	var mapcanvas = document.getElementById('mapcanvas');
 
 	var latlng_origin = new google.maps.LatLng(lat_origin.value, lon_origin.value);
 	var latlng_dest = new google.maps.LatLng(lat_dest.value, lon_dest.value);
