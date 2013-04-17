@@ -34,7 +34,7 @@ function renderRoute(route) {
 		lat_end = actual_step.end_location.lat;
 		lon_end = actual_step.end_location.lng;
 		
-		console.log("successGPS: " + "[" +lat_now+ ", " +lon_now+ ", " +lat_end+ ", " +lon_end+ "]");
+		console.log("successGPS: " + "[" +lat_now+ ", " +lon_now+ "] [" +lat_end+ ", " +lon_end+ "]");
 
 		// Mock to test
 		//lat_end = lat_now; // Mock

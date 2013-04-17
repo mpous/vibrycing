@@ -13,9 +13,13 @@ var map;
 var markersArray = [];
 var currentPosition = [];
 
-function success(position) 
-{
-	console.log("Success....");
+function successGPS(position) {
+	
+	lat_now = position.coords.latitude;
+	lon_now = position.coords.longitude;
+
+	console.log("success GPS initial Map: " + "[" +lat_now+ ", " +lon_now+ "]");
+	
 	var s = document.querySelector('#status');
 
 	var lat_origin = document.querySelector('#lat_origin');
@@ -183,7 +187,7 @@ function deleteCurrentPositionOverlays() {
 	}
 }
 
-function error(msg) {
+function errorGPS(msg) {
 	var s = $('#status');
 	s.innerHTML = typeof msg == 'string' ? msg : "failed";
 	s.className = 'fail';
@@ -196,13 +200,20 @@ $(document).ready( function() { // When body is ready!
 
 	if (navigator.geolocation) 
 	{
-		console.log("Geolocation is supported!");
-		navigator.geolocation.getCurrentPosition(success, error);
+		console.log("Geolocation is supported! asking for timeout 0...");
+		navigator.geolocation.getCurrentPosition(successGPS, errorGPS, {maximumAge:5000, timeout:0});
+		/*
+		navigator.geolocation.watchPosition(
+		  successGPS,
+		  errorGPS,
+		  { enableHighAccuracy: true }
+		);
+		*/
 	}
 	else
 	{
 		console.log("Geolocation not supported!");
-		error('Geolocation not supported');
+		errorGPS('Geolocation not supported');
 	}
 
 });
